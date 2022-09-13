@@ -105,7 +105,10 @@ def main():
     sys.exit(0)
   
   if save == "true":
-    saveFile(fileName, vectorDF)
+    if model != "TF-IDF":
+      saveFile(fileName, vectorDF)
+    else:
+      print("Programmet södjer inte sparning av TF-IDF vektorer")  
 
     if visualize != "true":
         sys.exit(0)
